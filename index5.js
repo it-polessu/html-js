@@ -1,3 +1,5 @@
+import { add, subtract, multiply, divide } from './calc.js';
+
 function doCalculate(expression) {
     const breakers = /[-\+\*\/]/
     const members = expression.split(breakers);
@@ -18,20 +20,12 @@ function doCalculate(expression) {
             result = subtract(operandA, operandB);
             break;
         case '*':
-            result = operandA * operandB;
+            result = multiply(operandA, operandB);
             break;
         case '/':
-            result = operandA / operandB;
+            result = divide(operandA, operandB);
             break;
     }
 
     return result;
-}
-
-function add(a, b) {
-    return a + b;
-}
-
-function subtract(a, b) {
-    return a - b;
 }
